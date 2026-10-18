@@ -38,7 +38,7 @@ def package_metadata(system: str) -> dict:
         "}) pkgs"
     )
     out = subprocess.run(
-        ["nix", "eval", "--json", f".#packages.{system}", "--apply", expr],
+        ["nix", "eval", "--json", f"path:{ROOT}#packages.{system}", "--apply", expr],
         check=True, capture_output=True, text=True, cwd=ROOT,
     ).stdout
     return json.loads(out)

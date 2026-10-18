@@ -22,9 +22,16 @@ buildNpmPackage rec {
   meta = with lib; {
     description = "Passive subdomain enumeration from public sources";
     homepage = "https://github.com/sectui/subdomain-finder";
+    changelog = "https://github.com/sectui/subdomain-finder/releases/tag/v${version}";
     license = licenses.mit;
     platforms = platforms.unix;
-    maintainers = [];
+    maintainers = [
+      {
+        name = "Hadi";
+        github = "anotherhadi";
+        githubId = 112569860;
+      }
+    ];
     mainProgram = "subdomain-finder";
   };
 }
